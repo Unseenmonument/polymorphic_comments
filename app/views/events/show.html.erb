@@ -1,0 +1,23 @@
+<h1>Events#show</h1>
+<p>Find me in app/views/events/show.html.erb</p>
+
+<%= render 'comments/comments', comment: Comment.new, commentable: @event %>
+
+<table>
+    <tbody>
+        <% @comments.each do |comment| %>
+        
+            <%  if comment.commentable_id != @event.id || comment.commentable_type != "Event"
+                    print comment
+                else
+                    print nil %>
+                
+                <tr>
+                    <td><%= comment.text %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+

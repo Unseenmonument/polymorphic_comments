@@ -1,0 +1,21 @@
+<h1>Stores#show</h1>
+<p>Find me in app/views/stores/show.html.erb</p>
+
+<%= render 'comments/comments', comment: Comment.new, commentable: @store %>
+
+<table>
+    <tbody>
+        <% @comments.each do |comment| %>
+        
+            <%  if comment.commentable_type != "Store" || @store.id != comment.commentable_id
+                    print comment
+                else
+                    print nil %>
+                
+                <tr>
+                    <td><%= comment.text %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>

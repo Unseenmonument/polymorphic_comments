@@ -1,0 +1,28 @@
+<h1>Stores#new</h1>
+<p>Find me in app/views/stores/new.html.erb</p>
+
+<%= form_for @store do |f| %>
+
+    <%= f.label :name, "Store Name" %>
+    <%= f.text_field :name %>
+    
+    <br>
+    
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <br>
+    
+    <%= f.label :founded %>
+    <%= f.text_field :founded %>
+    
+    <br>
+    
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+
+    <br>
+    
+    <%= f.submit %>
+    
+<% end %>
